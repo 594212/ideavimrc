@@ -1,0 +1,95 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+set isk+=$
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+let mapleader=" "
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
+"Navigation
+map <leader>a <Action>(GotoAction)
+
+map <leader>ds <Action>(FileStructurePopup)
+map <leader>fs <Action>(ActivateStructureToolWindow)
+map <leader>df <Action>(ReformatCode)
+map <leader>e <Action>(Switcher)
+map <leader>ws <Action>(GotoSymbol)
+map <leader>wf <Action>(GotoFile)
+map <leader>ff <Action>(FindInPath)
+map <leader>wc <Action>(GotoClass)
+map <leader>ce <Action>(IntroduceVariable)
+map <A-x> <Action>(ShowNavBar)
+imap <C-J> <Action>(InsertLiveTemplate)
+
+map <S-K> <Action>(ShowHoverInfo)
+nmap gd <Action>(GotoDeclarationOnly)
+nmap gi <Action>(GotoImplementation)
+nmap gu <Action>(GotoDeclaration)
+nmap rm <Action>(RenameElement)
+nmap mv <Action>(Move)
+nmap [ <Action>(MethodUp)
+nmap ] <Action>(MethodDown)
+"" map n <Action>(FindNext)
+"" map <S-n> <Action>(FindPrevious)
+nmap sf <Action>(FindUsagesInFile)
+nmap sw <Action>(FindUsages)
+nmap s viw
+nmap cu <Action>(com.laravel_idea.plugin.GenerateHelperCodeAction)
+nmap <Esc> <Action>(HideActiveWindow)
+vmap A <Action>(EditorAddCaretPerSelectedLine)
+nmap <leader>tf <Action>(ToggleFullScreen)
+nmap cg <Action>(com.laravel_idea.plugin.LaravelActionChooser)
+sethandler <C-2> a:ide
+sethandler <C-S-2> a:ide
+sethandler <C-6> a:ide
+sethandler <C-S-6> a:ide
+sethandler <C-A> a:ide
+sethandler <C-B> a:ide
+sethandler <C-C> a:ide
+sethandler <C-D> a:ide
+sethandler <C-E> a:ide
+sethandler <C-F> a:ide
+sethandler <C-G> a:ide
+sethandler <C-H> a:ide
+sethandler <C-I> a:ide
+sethandler <C-J> a:ide
+sethandler <C-K> a:ide
+sethandler <C-L> a:ide
+sethandler <C-M> a:ide
+sethandler <C-N> a:ide
+sethandler <C-O> n:vim i-x:ide
+sethandler <C-P> a:ide
+sethandler <C-Q> a:ide
+sethandler <C-R> n:vim i:ide
+sethandler <C-S> a:ide
+sethandler <C-T> a:ide
+sethandler <C-U> a:ide
+sethandler <C-V> a:ide
+sethandler <C-W> a:ide
+sethandler <C-X> a:ide
+sethandler <C-Y> a:ide
+sethandler <C-[> a:ide
+sethandler <C-\> a:ide
+sethandler <C-]> a:ide
+
+set ideajoin
+
+set which-key
+
+set timeoutlen=5000

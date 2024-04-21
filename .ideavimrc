@@ -2,7 +2,7 @@
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
-
+" git --git-dir=.git-ideavimrc --work-tree=. push
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
@@ -21,19 +21,29 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
+set quickscope
 
 "Navigation
 map <leader>a <Action>(GotoAction)
 
+let g:WhichKeyDesc_workspace        = "<Space>w  workspace"
+let g:WhichKeyDesc_document        = "<Space>d  document"
+let g:WhichKeyDesc_generate        = "<Space>g  generate"
+let g:WhichKeyDesc_find        = "<Space>f  find"
+let g:WhichKeyDesc_go        = "g  go_to"
+let g:WhichKeyDesc_toggle        = "<Space>t  toggle"
+
 map <leader>ds <Action>(FileStructurePopup)
-map <leader>fs <Action>(ActivateStructureToolWindow)
 map <leader>df <Action>(ReformatCode)
 map <leader>e <Action>(Switcher)
 map <leader>ws <Action>(GotoSymbol)
 map <leader>wf <Action>(GotoFile)
-map <leader>ff <Action>(FindInPath)
+nmap <leader>ff <Action>(FindInPath)
+nmap <leader>fw <Action>(FindUsages)
 map <leader>wc <Action>(GotoClass)
-map <leader>ce <Action>(IntroduceVariable)
+nmap <leader>gl <Action>(com.laravel_idea.plugin.LaravelActionChooser)
+nmap <leader>gc <Action>(Generate)
+nmap <leader>gh <Action>(com.laravel_idea.plugin.GenerateHelperCodeAction)
 map <A-x> <Action>(ShowNavBar)
 imap <C-J> <Action>(InsertLiveTemplate)
 
@@ -45,16 +55,19 @@ nmap rm <Action>(RenameElement)
 nmap mv <Action>(Move)
 nmap [ <Action>(MethodUp)
 nmap ] <Action>(MethodDown)
+
 "" map n <Action>(FindNext)
 "" map <S-n> <Action>(FindPrevious)
-nmap sf <Action>(FindUsagesInFile)
-nmap sw <Action>(FindUsages)
+"" nmap sf <Action>(FindUsagesInFile)
+
 nmap s viw
-nmap cu <Action>(com.laravel_idea.plugin.GenerateHelperCodeAction)
+map <leader>ce <Action>(IntroduceVariable)
+
 nmap <Esc> <Action>(HideActiveWindow)
 vmap A <Action>(EditorAddCaretPerSelectedLine)
+
 nmap <leader>tf <Action>(ToggleFullScreen)
-nmap cg <Action>(com.laravel_idea.plugin.LaravelActionChooser)
+map <leader>ts <Action>(ActivateStructureToolWindow)
 sethandler <C-2> a:ide
 sethandler <C-S-2> a:ide
 sethandler <C-6> a:ide
